@@ -122,3 +122,19 @@ class TestColormaps:
         if importlib.util.find_spec('cv2'):
             import cv2
             cv2.imwrite(os.path.join(tmp_path, 'test_jet_cmap.png'), np.round(img * 255).astype(np.uint8)[:, :, [2, 1, 0, 3]])
+
+
+class TestScale:
+    def test_color_scale(self, tmp_path):
+        rng = np.random.default_rng()
+        values = rng.random((588, )), rng.random((587, ))
+        img, scale = brain_plot(*values, vmax=1, vmin=0, cmap='viridis', return_scale=True)
+        from matplotlib import cm
+        assert isinstance(scale, cm.ScalarMappable)
+        assert img.shape in [(1560, 1728, 4), (1560, 1728, 3)]
+        assert img.dtype == np.float64
+        assert np.all(img <= 1)
+        assert np.all(img >= 0)
+        if importlib.util.find_spec('cv2'):
+            import cv2
+            cv2.imwrite(os.path.join(tmp_path, 'test_colorscale.png'), np.round(img * 255).astype(np.uint8)[:, :, [2, 1, 0, 3]])

@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from matplotlib import cm
+from matplotlib import cm, colors
 
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
@@ -100,7 +100,7 @@ def prepare_data(*values):
     return new_values
 
 
-def brain_plot(*values, vmax, vmin, cmap=None, medial_wall_color=[0.8, 0.8, 0.8, 1.0], background_color=[1.0, 1.0, 1.0, 0.0]):
+def brain_plot(*values, vmax, vmin, cmap=None, medial_wall_color=[0.8, 0.8, 0.8, 1.0], background_color=[1.0, 1.0, 1.0, 0.0], return_scale=False):
     values = prepare_data(*values)
     nan_mask = np.isnan(values)
     r = (vmax - values) / (vmax - vmin)
@@ -110,4 +110,8 @@ def brain_plot(*values, vmax, vmin, cmap=None, medial_wall_color=[0.8, 0.8, 0.8,
     c[nan_mask] = medial_wall_color
     c = np.concatenate([c, [_[:c.shape[1]] for _ in [medial_wall_color, background_color]]], axis=0)
     img = c[PLOT_MAPPING]
+    if return_scale:
+        norm = colors.Normalize(vmax=vmax, vmin=vmin, clip=True)
+        scale = cm.ScalarMappable(norm=norm, cmap=cmap)
+        return img, scale
     return img
