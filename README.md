@@ -1,13 +1,21 @@
-This simple package contains a `brain_plot` function that plots data on cortical surface.
-It assumes that:
-- The data is in fsaverage space with icoorder3 resolution (642 vertices per hemisphere).
-- The non-cortical vertices has been masked out (588 and 587 remaining vertices for the left and right hemisphere, respectively).
+This is a Python package that plots data on cortical surface.
+
+## Installation
+The package can be installed with pip:
+```bash
+pip install brainplotlib
+```
+
+## Example usage
 
 ```Python
 import numpy as np
 from brainplotlib import brain_plot
 
-# Generate some random data
+## Generate some random data
+# In this case it's icoorder3 resolution (642 vertices per hemisphere), and
+# the non-cortical vertices have been masked out (588 and 587 remaining
+# vertices for the left and right hemisphere, respectively).
 rng = np.random.default_rng(0)
 v = rng.random((1175, ))
 
