@@ -1,5 +1,7 @@
 This is a Python package that plots data on cortical surface.
 
+![brain image](https://github.com/feilong/brainplotlib/raw/main/images/random_data_with_colorbar.png)
+
 ## Installation
 The package can be installed with pip:
 ```bash
@@ -19,16 +21,18 @@ from brainplotlib import brain_plot
 rng = np.random.default_rng(0)
 v = rng.random((1175, ))
 
-img = brain_plot(v, vmax=1, vmin=0, cmap='viridis')
+img, scale = brain_plot(v, vmax=1, vmin=0, cmap='viridis', return_scale=True)
 ```
 
 The rendered image is a NumPy array.
 It can be rendered using `matplotlib`:
 ```Python
 import matplotlib.pyplot as plt
-fig = plt.figure(figsize=(img.shape[1] / 100, img.shape[0] / 100), dpi=100)
+fig = plt.figure(figsize=(img.shape[1] / 200, img.shape[0] / 200), dpi=200)
 plt.imshow(img)
 plt.axis('off')
+cbar = plt.colorbar(scale, shrink=0.8, aspect=30)
+plt.savefig('random_data_with_colorbar.png', bbox_inches='tight')
 plt.show()
 ```
 
@@ -39,5 +43,3 @@ cv2.imwrite(
     'random_data.png',
     np.round(img[:, :, [2, 1, 0]] * 255).astype(np.uint8))
 ```
-
-![brain image](https://github.com/feilong/brainplotlib/raw/main/images/random_data.png)
