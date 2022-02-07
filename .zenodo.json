@@ -1,0 +1,35 @@
+{
+    "title": "brainplotlib: plotting brain data on cortical surface",
+    "description": "<p>brainplotlib allows plotting data on cortical surface with minimal requirements. It supports multiple resolutions and both masked and non-masked data.</p>",
+    "creators": [
+        {
+            "affiliation": "Dartmouth College",
+            "name": "Feilong, Ma",
+            "orcid": "0000-0002-6838-3971"
+        },
+        {
+            "affiliation": "Dartmouth College",
+            "name": "Jiahui, Guo",
+            "orcid": "0000-0002-1528-9025"
+        },
+        {
+            "affiliation": "Università di Bologna; Dartmouth College",
+            "name": "Gobbini, M. Ida",
+            "orcid": "0000-0001-6727-7934"
+        },
+        {
+            "affiliation": "Dartmouth College",
+            "name": "Haxby, James V.",
+            "orcid": "0000-0002-6558-3118"
+        }
+    ],
+    "keywords": [
+        "visualization",
+        "plotting",
+        "brain",
+        "fMRI",
+        "neuroimaging",
+        "Python"
+    ],
+    "upload_type": "software"
+}
