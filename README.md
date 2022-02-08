@@ -43,3 +43,21 @@ cv2.imwrite(
     'random_data.png',
     np.round(img[:, :, [2, 1, 0]] * 255).astype(np.uint8))
 ```
+
+## Citation
+If you use this software in your publications, please cite it [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5979819.svg)](https://doi.org/10.5281/zenodo.5979819)
+```bibtex
+@software{brainplotlib,
+  author       = {Ma Feilong and
+                  Guo Jiahui and
+                  M. Ida Gobbini and
+                  James V. Haxby},
+  title        = {{brainplotlib: plotting brain data on cortical 
+                   surface}},
+  month        = feb,
+  year         = 2022,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.5979819},
+  url          = {https://doi.org/10.5281/zenodo.5979819}
+}
+```
