@@ -19,6 +19,13 @@ class TestUnmaskUpsample:
         assert values.max() == 20483
         assert np.all(np.isfinite(values))
 
+    def test_icoorder7_nonmasked(self):
+        lh = np.arange(163842)
+        rh = np.arange(163842) + 163842
+        values = unmask_and_upsample(lh, rh, 'fsaverage', 7, False)
+        assert values.min() == 0
+        assert values.max() == 327683
+        assert np.all(np.isfinite(values))
 
 class TestPrepareData:
     def test_tuple_input(self):

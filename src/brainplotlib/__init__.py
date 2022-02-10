@@ -74,8 +74,9 @@ def unmask_and_upsample(lh, rh, space, icoorder, masked):
         else:
             vv = v
 
-        voronoi = np.load(os.path.join(DATA_DIR, f'voronoi_fsaverage_{lr}h_icoorder{icoorder}.npy'))
-        vv = vv[voronoi]
+        if icoorder < 7:
+            voronoi = np.load(os.path.join(DATA_DIR, f'voronoi_fsaverage_{lr}h_icoorder{icoorder}.npy'))
+            vv = vv[voronoi]
         new_values.append(vv)
     new_values = np.concatenate(new_values, axis=0)
     return new_values
