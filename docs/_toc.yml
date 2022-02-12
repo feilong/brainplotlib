@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Examples
+  chapters:
+  - file: examples/index
+  - file: examples/save_image
+  - file: examples/plot_colorbar
+  - file: examples/different_cmaps
+  - file: examples/different_resolutions
+  - file: examples/cortical_masks
+  - file: examples/different_surfaces
