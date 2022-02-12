@@ -1,4 +1,9 @@
-This is a Python package that plots data on cortical surface.
+![PyPI](https://img.shields.io/pypi/v/brainplotlib)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/brainplotlib)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5979819.svg)](https://doi.org/10.5281/zenodo.5979819)
+
+`brainplotlib` is a Python package that plots data on cortical surface.
+It's designed to have minimal requirements --- only `NumPy` and `matplotlib`.
 
 ![brain image](https://github.com/feilong/brainplotlib/raw/main/images/random_data_with_colorbar.png)
 
@@ -9,6 +14,8 @@ pip install brainplotlib
 ```
 
 ## Example usage
+
+**See the [examples gallery](https://feilong.github.io/brainplotlib/examples/index.html) for all code examples with detailed explanations.**
 
 ```Python
 import numpy as np
@@ -36,7 +43,7 @@ plt.savefig('random_data_with_colorbar.png', bbox_inches='tight')
 plt.show()
 ```
 
-Alternatively, the high-resolution image can be saved directly using `cv2`.
+Alternatively, the high-resolution image can be saved directly using `OpenCV`.
 ```Python
 import cv2
 cv2.imwrite(
@@ -48,12 +55,8 @@ cv2.imwrite(
 If you use this software in your publications, please cite it [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5979819.svg)](https://doi.org/10.5281/zenodo.5979819)
 ```bibtex
 @software{brainplotlib,
-  author       = {Ma Feilong and
-                  Guo Jiahui and
-                  M. Ida Gobbini and
-                  James V. Haxby},
-  title        = {{brainplotlib: plotting brain data on cortical 
-                   surface}},
+  author       = {Ma Feilong and Guo Jiahui and M. Ida Gobbini and James V. Haxby},
+  title        = {brainplotlib: plotting brain data on cortical surface},
   month        = feb,
   year         = 2022,
   publisher    = {Zenodo},
