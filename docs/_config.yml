@@ -35,61 +35,75 @@ parse:
   myst_substitutions:
     gallery: |
       ````{panels}
-      :column: col-4
+      :column: col-4 m-0
+      :body: p-0
 
-      <a href="/examples/save_image.html">
-      Save the high-res image
-      ^^^
-      ```{glue:} save_image
+      ```{link-button} /examples/save_image
+      :text: Save the high-res image
+      :type: ref
+      :classes: stretched-link btn-block m-0 p-0
       ```
-      </a>
+      ^^^
+      ```{glue:figure} save_image
+      ```
 
       ---
 
-      <a href="/examples/plot_colorbar.html">
-      Plot a colorbar
-      ^^^
-      ```{glue:} with_colorbar
+      ```{link-button} /examples/plot_colorbar
+      :text: Plot a colorbar
+      :type: ref
+      :classes: stretched-link btn-block m-0 p-0
       ```
-      </a>
+      ^^^
+      ```{glue:figure} with_colorbar
+      ```
 
       ---
 
-      <a href="/examples/different_cmaps.html">
-      Different colormaps
-      ^^^
-      ```{glue:} different_cmaps
+      ```{link-button} /examples/different_cmaps
+      :text: Different colormaps
+      :type: ref
+      :classes: stretched-link btn-block m-0 p-0
       ```
-      </a>
+      ^^^
+      ```{glue:figure} different_cmaps
+      ```
 
       ````
       ````{panels}
-      :column: col-4
+      :column: col-4 m-0
+      :body: p-0
 
-      <a href="/examples/different_resolutions.html">
-      Different data resolutions
-      ^^^
-      ```{glue:} different_resolutions
+      ```{link-button} /examples/different_resolutions
+      :text: Different data resolutions
+      :type: ref
+      :classes: stretched-link btn-block m-0 p-0
       ```
-      </a>
+      ^^^
+      ```{glue:figure} different_resolutions
+      ```
 
       ---
  
-      <a href="/examples/cortical_masks.html">
-      Handling cortical masks
-      ^^^
-      ```{glue:} cortical_masks
+      ```{link-button} /examples/cortical_masks
+      :text: Handling cortical masks
+      :type: ref
+      :classes: stretched-link btn-block m-0 p-0
       ```
-      </a>
+      ^^^
+      ```{glue:figure} cortical_masks
+      ```
 
       ---
 
-      <a href="/examples/different_surfaces.html">
-      Alternative surface types
-      ^^^
-      ```{glue:} different_surfaces
+      ```{link-button} /examples/different_surfaces
+      :text: Alternative surface types
+      :type: ref
+      :classes: stretched-link btn-block m-0 p-0
       ```
-      </a>
+      ^^^
+      ```{glue:figure} different_surfaces
+      ```
 
       ````
     gallery_link : |
