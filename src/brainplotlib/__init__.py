@@ -105,7 +105,7 @@ def prepare_data(*values):
 def brain_plot(*values, vmax, vmin, cmap=None, medial_wall_color=[0.8, 0.8, 0.8, 1.0], background_color=[1.0, 1.0, 1.0, 0.0], return_scale=False, surf_type='inflated'):
     values = prepare_data(*values)
     nan_mask = np.isnan(values)
-    r = (vmax - values) / (vmax - vmin)
+    r = (values - vmin) / (vmax - vmin)
     r = np.clip(r, 0.0, 1.0)
     cmap = cm.get_cmap(cmap)
     c = cmap(r)
