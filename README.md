@@ -1,5 +1,6 @@
-![PyPI](https://img.shields.io/pypi/v/brainplotlib)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/brainplotlib)
+[![PyPI](https://img.shields.io/pypi/v/brainplotlib)](https://pypi.org/project/brainplotlib/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/brainplotlib)](https://pypistats.org/packages/brainplotlib)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/brainplotlib)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5979819.svg)](https://doi.org/10.5281/zenodo.5979819)
 
 `brainplotlib` is a Python package that plots data on cortical surface.
