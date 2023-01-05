@@ -8,6 +8,8 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
 PLOT_MAPPING = {surf_type: np.load(os.path.join(DATA_DIR, f'fsaverage_to_{surf_type}_image.npy'))
     for surf_type in ['inflated', 'pial', 'midthickness', 'white']}
 
+example_data = np.load(os.path.join(DATA_DIR, 'example_data.npy'))
+
 GUESS_SEPARATE = {
     ## masked data
     # (588, 587): ('fsaverage5', 3, True),
