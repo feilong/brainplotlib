@@ -20,23 +20,27 @@ This example shows how to plot a colorbar besides the brain.
 ```{glue:} with_colorbar
 ```
 
+```{margin} Example data
+The example data is a NumPy array combining masked data of both hemispheres, based on a face-selectivity map from [Jiahui et al. (2020)](https://doi.org/10.1016/j.neuroimage.2019.116458) [Figure 5](https://www.sciencedirect.com/science/article/pii/S1053811919310493#fig5).
+```
 ```{code-cell}python
 import numpy as np
-from brainplotlib import brain_plot
+from brainplotlib import brain_plot, example_data
 import matplotlib.pyplot as plt
 
-rng = np.random.default_rng(0)
-v = rng.random((1175, ))
+print(example_data.shape, example_data.dtype)
 ```
 ```{margin} Get color scale information
 The `return_scale` parameter allows returning the color scale information along with the image itself, which can then be used by `plt.colorbar`.
 ```
 ```{code-cell}python
-img, scale = brain_plot(v, vmax=1, vmin=0, cmap='viridis', return_scale=True)
+img, scale = brain_plot(
+    example_data, vmax=10, vmin=-10, cmap='seismic', return_scale=True)
 ```
 ```{code-cell}python
 :tags: ["remove-output"]
-fig = plt.figure(figsize=(img.shape[1] / 300, img.shape[0] / 300), dpi=300)
+fig = plt.figure(
+    figsize=(img.shape[1] / 300, img.shape[0] / 300), dpi=300)
 plt.imshow(img)
 plt.axis('off')
 cbar = plt.colorbar(scale, shrink=0.8, aspect=30)
