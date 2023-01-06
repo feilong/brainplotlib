@@ -1,12 +1,12 @@
 [![PyPI](https://img.shields.io/pypi/v/brainplotlib)](https://pypi.org/project/brainplotlib/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/brainplotlib)](https://pypistats.org/packages/brainplotlib)
+[![Downloads](https://static.pepy.tech/badge/brainplotlib)](https://pepy.tech/project/brainplotlib)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/brainplotlib)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5979819.svg)](https://doi.org/10.5281/zenodo.5979819)
 
 `brainplotlib` is a Python package that plots data on cortical surface.
 It's designed to have minimal requirements --- only `NumPy` and `matplotlib`.
 
-![brain image](https://github.com/feilong/brainplotlib/raw/main/images/random_data_with_colorbar.png)
+![brain image](https://github.com/feilong/brainplotlib/raw/main/images/example_data_with_colorbar.png)
 
 ## Installation
 The package can be installed with pip:
@@ -20,16 +20,14 @@ pip install brainplotlib
 
 ```Python
 import numpy as np
-from brainplotlib import brain_plot
+from brainplotlib import brain_plot, example_data
 
-## Generate some random data
-# In this case it's icoorder3 resolution (642 vertices per hemisphere), and
-# the non-cortical vertices have been masked out (588 and 587 remaining
+# The example_data is icoorder5 resolution (10242 vertices per hemisphere),
+# and the non-cortical vertices have been masked out (9372 and 9370 remaining
 # vertices for the left and right hemisphere, respectively).
-rng = np.random.default_rng(0)
-v = rng.random((1175, ))
 
-img, scale = brain_plot(v, vmax=1, vmin=0, cmap='viridis', return_scale=True)
+img, scale = brain_plot(
+    example_data, vmax=10, vmin=-10, cmap='seismic', return_scale=True)
 ```
 
 The rendered image is a NumPy array.
@@ -40,7 +38,7 @@ fig = plt.figure(figsize=(img.shape[1] / 200, img.shape[0] / 200), dpi=200)
 plt.imshow(img)
 plt.axis('off')
 cbar = plt.colorbar(scale, shrink=0.8, aspect=30)
-plt.savefig('random_data_with_colorbar.png', bbox_inches='tight')
+plt.savefig('example_data_with_colorbar.png', bbox_inches='tight')
 plt.show()
 ```
 
@@ -48,7 +46,7 @@ Alternatively, the high-resolution image can be saved directly using `OpenCV`.
 ```Python
 import cv2
 cv2.imwrite(
-    'random_data.png',
+    'example_data.png',
     np.round(img[:, :, [2, 1, 0]] * 255).astype(np.uint8))
 ```
 
