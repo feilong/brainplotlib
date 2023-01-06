@@ -74,10 +74,12 @@ cv2.imwrite(
     np.round(img[:, :, reorder] * 255).astype(np.uint8))
 ```
 
-````{tabbed} Using matplotlib
+`````{tab-set}
+````{tab-item} Using matplotlib
 ```python
 import matplotlib.pyplot as plt
-fig = plt.figure(figsize=(img.shape[1] / 200, img.shape[0] / 200), dpi=200)
+fig = plt.figure(
+    figsize=(img.shape[1] / 200, img.shape[0] / 200), dpi=200)
 ax = fig.add_axes([0, 0, 1, 1])
 ax.imshow(img)
 ax.axis('off')
@@ -85,7 +87,7 @@ plt.savefig('save_image_matplotlib.png')
 plt.close()
 ```
 ````
-````{tabbed} Using Pillow
+````{tab-item} Using Pillow
 ```python
 from PIL import Image
 im = Image.fromarray(
@@ -96,7 +98,7 @@ im.save('save_image_pillow.png')
 The code block above requires that the [Pillow package](https://pillow.readthedocs.io/en/stable/index.html) has been installed.
 ```
 ````
-````{tabbed} Using OpenCV
+````{tab-item} Using OpenCV
 ```python
 import cv2
 ## The default channel order of OpenCV is BGR rather than RGB.
@@ -109,25 +111,28 @@ cv2.imwrite(
 The code block above requires that [OpenCV](https://opencv.org/) and its Python bindings to be installed.
 ```
 ````
+`````
 
 ## Comparison of saved images
-````{panels}
-:column: col-4
-
+````{grid}
+```{grid-item-card}
+:class-header: bg-light text-center
 Using matplotlib
 ^^^
 ![](save_image_matplotlib.png)
----
-
+```
+```{grid-item-card}
+:class-header: bg-light text-center
 Using Pillow
 ^^^
 ![](save_image_pillow.png)
----
-
+```
+```{grid-item-card}
+:class-header: bg-light text-center
 Using OpenCV
 ^^^
 ![](save_image_opencv.png)
-
+```
 ````
 
 {{ gallery_link }}

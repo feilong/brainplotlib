@@ -9,7 +9,7 @@ It only depends on [`NumPy`](https://numpy.org/) and [`matplotlib`](https://matp
 
 `brainplotlib` can be easily installed with pip
 ```bash
-pip install brainplotlib
+python -m pip install brainplotlib
 ```
 
 

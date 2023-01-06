@@ -13,7 +13,7 @@ kernelspec:
   name: python3
 ---
 
-# Handling cortical masks
+# Handle cortical masks
 
 Not every vertex on surface belongs to the cerebral cortex.
 There are approximately 8.5% of vertices around the medial wall that are non-cortical.
