@@ -1,0 +1,14 @@
+---
+tool_resource_name: brainplotlib
+associations: []
+organization: ""
+description: brainplotlib is a Python package that plots data on cortical surface.
+  It's designed to have minimal requirements --- only NumPy and matplotlib.
+non_member_message: This tool/resource's administrator will have to grant you permission
+  to view this page.
+funding_source: ~
+homepage: http://www.nitrc.org/projects/brainplotlib/
+center: ""
+neurodebian_package: ~
+neurolex_id: ~
+...
